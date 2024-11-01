@@ -11,6 +11,7 @@ public class SearchNilai_20 {
         int[] arrNilai = new int[banyakNilai];
         int key;
         int hasil = 0;
+        boolean ditemukan = false;
 
         for (int i = 0; i < arrNilai.length; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-" +(i+1)+ " : ");
@@ -23,12 +24,17 @@ public class SearchNilai_20 {
         for (int i = 0; i < arrNilai.length; i++) {
             if (key == arrNilai[i]) {
                 hasil = i + 1;
+                ditemukan = true;
                 break;
             }
         }
 
         System.out.println();
-        System.out.println("Nilai " + key + " merupakan nilai mahasiswa ke-" + hasil);
+        if (ditemukan) {
+            System.out.println("Nilai " + key + " merupakan nilai mahasiswa ke-" + hasil);
+        } else {
+            System.out.println("Nilai yang dicari tidak ditemukan");
+        }
         System.out.println();
     }
 }
